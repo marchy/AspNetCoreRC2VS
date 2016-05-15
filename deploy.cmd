@@ -21,7 +21,7 @@ set NUGET_PACKAGES=%HOME%\.nuget
 call :ExecuteCmd nuget.exe restore -source https://www.myget.org/F/aspnetrc2/api/v3/index.json -source https://api.nuget.org/v3/index.json -packagesavemode nuspec
 IF !ERRORLEVEL! NEQ 0 goto error
 
-call :ExecuteCmd dotnet publish --output "%DEPLOYMENT_TEMP%"
+call :ExecuteCmd dotnet publish src\AspNetCoreRC2 --output "%DEPLOYMENT_TEMP%"
 IF !ERRORLEVEL! NEQ 0 goto error
 
 call :ExecuteCmd "%KUDU_SYNC_CMD%" -v 50 -f "%DEPLOYMENT_TEMP%" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.hg;.deployment;deploy.cmd"
