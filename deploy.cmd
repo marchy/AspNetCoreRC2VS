@@ -18,7 +18,7 @@ set NUGET_XMLDOC_MODE=skip
 set NUGET_PACKAGES=%HOME%\.nuget
 
 :: For now, we need a myget feed since RC2 packages are not yet released
-call :ExecuteCmd nuget.exe restore -source https://myget.org/f/aspnetrelease/api/v3/index.json -source https://api.nuget.org/v3/index.json -packagesavemode nuspec
+call :ExecuteCmd nuget.exe restore -source https://www.myget.org/F/aspnetrc2/api/v3/index.json -source https://api.nuget.org/v3/index.json -packagesavemode nuspec
 IF !ERRORLEVEL! NEQ 0 goto error
 
 call :ExecuteCmd dotnet publish --output "%DEPLOYMENT_TEMP%"
