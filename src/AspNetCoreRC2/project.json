@@ -1,4 +1,4 @@
-﻿{
+{
   "userSecretsId": "aspnet-AspNetCoreRC2-4a1f7478-a0f0-475f-973e-186e3d89f9a1",
 
   "dependencies": {
@@ -37,7 +37,8 @@
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview1-final",
       "type": "build"
-    }
+    },
+    "MyCoreLib": "1.0.0-*"
   },
 
   "tools": {

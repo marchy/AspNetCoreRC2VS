@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using MyCoreLib;
 
 namespace AspNetCoreRC2.Controllers
 {
@@ -15,7 +16,7 @@ namespace AspNetCoreRC2.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = $"Your application description page. {Hello.SayHello("David")}";
 
             return View();
         }
