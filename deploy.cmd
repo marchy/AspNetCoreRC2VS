@@ -17,8 +17,8 @@ set NUGET_XMLDOC_MODE=skip
 :: Make the NuGet packages go in a persisted folder instead of %USERPROFILE%, which on Azure goes in Temp space
 set NUGET_PACKAGES=%HOME%\.nuget
 
-:: For now, we need a myget feed since RC2 packages are not yet released
-call :ExecuteCmd nuget.exe restore -source https://api.nuget.org/v3/index.json -packagesavemode nuspec
+:: Restore nuget packages
+call :ExecuteCmd nuget.exe restore -packagesavemode nuspec
 IF !ERRORLEVEL! NEQ 0 goto error
 
 call :ExecuteCmd dotnet publish src\AspNetCoreRC2 --output "%DEPLOYMENT_TEMP%"
